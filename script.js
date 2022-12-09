@@ -1,3 +1,4 @@
+//here will calculating the speed
 let speedLimit =(speed)=>{
     let points =(speed-70)/5
     if(speed<70){

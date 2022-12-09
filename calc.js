@@ -14,12 +14,7 @@ function calculateNetSalary(){
   PAYE equals ${paye/100*grossSalary}, NSSF equals ${nssf} and NHIF equals ${nhif}`);
 }
 (calculateNetSalary());
-// .............................................PAYE..................................................
-// Monthly Taxable Pay (Ksh)    Rate of Tax (%)
-// Up to 24,000                      10%
-// 24,001 - 32,333                   25%
-// Above 32,333                      30%
-// let grossSalary = 70000;
+//here will calculating monthly taxable income
 function calculatePaye(){
   switch(true){
       case (grossSalary <= 24000):
@@ -35,17 +30,6 @@ function calculatePaye(){
   return paye;
 }
 // console.log(calculatePaye());
-// ...............................................NHIF..............................................
-// Gross Pay (Ksh)  Deduction (Ksh)     Gross Pay (Ksh) Deduction (Ksh)
-// Up to 5,999  150     40,000 - 44,999 1,000
-// 6,000 - 7,999    300     45,000 - 49,999 1,100
-// 8,000 - 11,999   400     50,000 - 59,999 1,200
-// 12,000 - 14,999  500     60,000 - 69,999 1,300
-// 15,000 - 19,999  600     70,000 - 79,999 1,400
-// 20,000 - 24,999  750     80,000 - 89,999 1,500
-// 25,000 - 29,999  850     90,000 - 99,999 1,600
-// 30,000 - 34,999  900     100,000 and above   1,700
-// 35,000 - 39,999  950
 function calculateNhif(){
   switch(true){
       case (grossSalary <= 5999):
@@ -99,11 +83,7 @@ function calculateNhif(){
   }
   return nhif;
 }
-// .............................................NSSF................................................
-// NEW RATES
-// tier1 6% of gross to max of 6000 ..............tier2 6% of gross to max of 18000 and min of 6001
-// OLD RATES
-// 5% of gross to max of 400
+//New rates
 function calculateNssf(){
   if(nssfSelection === "newRateT1"){
       nssf = grossSalary * 6/100;
